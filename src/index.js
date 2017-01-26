@@ -1,11 +1,11 @@
 /* eslint-disable no-underscore-dangle */
-import Define from './Define';
+import MasterWatcher from './MasterWatcher';
 
 (((win, doc) => {
-    const defineObj = new Define(
+    const watcher = new MasterWatcher(
         win._foozlejs || {},
         win,
         doc
     );
-    win.foozlejs = defineObj.initAPI();
+    win.foozlejs = watcher.initAPI();
 }))(window, document);

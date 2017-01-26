@@ -12,7 +12,7 @@ import WindowWatcher from './WindowWatcher';
 
 import { util, MetadataReport, InitWatcher } from './helpers/utils';
 
-export default class Define {
+export default class MasterWatcher {
     constructor(token, win, doc) {
 
         try {
