@@ -1,7 +1,7 @@
 {
   "name": "foozle-tracker",
   "version": "1.0.0",
-  "description": "",
+  "description": "Tracking errors",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dashboard -- webpack-dev-server --config webpack.dev.config.js --port 8888",
@@ -10,18 +10,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jojo5716/foozle-tracker.git"
+    "url": "git+https://github.com/jojo5716/foozlejs-tracker.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jojo5716/foozle-tracker/issues"
+    "url": "https://github.com/jojo5716/foozlejs-tracker/issues"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "homepage": "https://github.com/jojo5716/foozle-tracker#readme",
+  "homepage": "https://github.com/jojo5716/foozlejs-tracker#readme",
   "devDependencies": {
     "babel-core": "^6.18.2",
     "babel-eslint": "^7.1.0",
