@@ -1,3 +1,13 @@
+#### 1.0.2 (2017-1-26)
+
+##### Bug Fixes
+
+* **package:** main file ([7664399f](https://github.com/jojo5716/foozlejs-tracker/commit/7664399f569ca83abf4073b0887a3c7ec10c52fa))
+
+##### Other Changes
+
+* **bitbucket:** YML ([fb2104f8](https://github.com/jojo5716/foozlejs-tracker/commit/fb2104f8af1dacd1e9a152487a98751cc7b36e51))
+
 #### 1.0.1 (2017-1-26)
 
 ##### Chores
