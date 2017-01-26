@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Foozle tracker</title>
+    </head>
+
+    <body>
+        <p> Hello world! </p>
+        <input type="text"/>
+        <input type="password" placeholder="Password"/>
+        <select>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        <form>
+            <input type="radio" name="gender" value="male" checked> Male<br>
+            <input type="radio" name="gender" value="female"> Female<br>
+            <input type="radio" name="gender" value="other"> Other
+        </form>
+        <button onclick="prueba()"> Generar error </button>
+    </body>
+
+    <script type="text/javascript">
+        window._foozlejs = {
+            token: '095b0a09-fa45-42eb-92fa-113d503fc658',
+            console: {
+                warn: true
+            },
+            errorURL: 'http://127.0.0.1:8000/project/capture',
+            onError: function (payload, error) {
+                return true;
+
+            }
+
+        };
+    </script>
+
+    <script src="__dist__/index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        window.foozlejs.addMetadata("country", "Spain");
+        window.foozlejs.addMetadata("IP", "192.168.1.1");
+        window.foozlejs.addMetadata("IsLoggin", false);
+    </script>
+
+    <script type="text/javascript">
+         console.log("hola mundo");
+        // window.foozlejs.track('Capturing data...');
+        // $.ajax({
+        //   method: "GET",
+        //   url: "https://www.google.es",
+        //
+        // })
+        //   .done(function( msg ) {
+        //     alert( "Data Saved: " + msg );
+        //   });
+
+        function prueba() {
+            console.log(hola);
+        }
+
+    </script>
+</html>
