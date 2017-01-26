@@ -1,6 +1,6 @@
 {
   "name": "foozle-tracker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tracking errors",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,6 @@
     "release:patch": "npm run prerelease && changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push --follow-tags",
     "release:minor": "npm run prerelease && changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push --follow-tags",
     "release:major": "npm run prerelease && changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push --follow-tags"
-
   },
   "repository": {
     "type": "git",
