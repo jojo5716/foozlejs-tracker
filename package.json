@@ -6,7 +6,13 @@
   "scripts": {
     "start": "webpack-dashboard -- webpack-dev-server --config webpack.dev.config.js --port 8888",
     "build": "webpack --config webpack.dist.config.js",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "check-master": "git symbolic-ref --short HEAD | grep ^master$ > /dev/null || (echo \"Not in 'master' branch. Aborting release\"; return 1)",
+    "prerelease": "npm run lint && npm run check-master",
+    "release:patch": "npm run prerelease && changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push --follow-tags",
+    "release:minor": "npm run prerelease && changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push --follow-tags",
+    "release:major": "npm run prerelease && changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push --follow-tags"
+
   },
   "repository": {
     "type": "git",
@@ -32,6 +38,7 @@
     "eslint-config-airbnb-base": "^10.0.1",
     "eslint-plugin-import": "^2.2.0",
     "extract-text-webpack-plugin": "^1.0.1",
+    "generate-changelog": "^1.1.0",
     "isomorphic-fetch": "^2.2.1",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"
