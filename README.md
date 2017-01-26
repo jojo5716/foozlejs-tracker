@@ -7,7 +7,7 @@ FoozleJS it's a tiny library that allow you to register errors of your web appli
 Tracking javascript errors.
 ----------
 How to use
-* 1.- Clone the dashboard project
+* 1.- Clone the dashboard project ([Dashboard project](https://github.com/jojo5716/foozlejs-front-django))
 * 2.- Create a project and get the token generated.
 * 3-. Call the index.min.js file in your project and configure the token.
 ```javascript 
