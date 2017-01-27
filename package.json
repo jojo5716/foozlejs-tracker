@@ -1,6 +1,6 @@
 {
   "name": "foozle-tracker",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Tracking errors",
   "main": "./dist/index.js",
   "scripts": {
@@ -43,6 +43,5 @@
     "webpack-dashboard": "^0.2.0",
     "webpack-dev-server": "^1.16.2"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
