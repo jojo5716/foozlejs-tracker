@@ -4,6 +4,12 @@
 
 * **rename:** Rename file ([b623729d](https://github.com/jojo5716/foozlejs-tracker/commit/b623729dce11f42822ebb4386dfe2e83ff9521bf))
 
+#### 1.0.3 (2017-1-27)
+
+##### Bug Fixes
+
+* **rename:** Rename file ([b623729d](https://github.com/jojo5716/foozlejs-tracker/commit/b623729dce11f42822ebb4386dfe2e83ff9521bf))
+
 #### 1.0.2 (2017-1-26)
 
 ##### Bug Fixes
