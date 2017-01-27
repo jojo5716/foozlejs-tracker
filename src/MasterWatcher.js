@@ -119,7 +119,7 @@ export default class MasterWatcher {
                         stack: args.stack,
                         timestamp: util.isoNow(),
                         visitor: this.visitorWatcher.report(),
-                        version: '1.0.0'
+                        version: '1.0.3'
                     });
 
                     if (!options.force) {
@@ -169,7 +169,7 @@ export default class MasterWatcher {
             msg: error.message || 'unknown',
             stack: (error.stack || 'unknown').substr(0, 500),
             url: this.window.location,
-            v: '1.0.0',
+            v: '1.0.3',
             h: '9b37e9ac0b951d1cc4f7724bcd102d9edbc4a5d2',
             x: util.uuid()
         };
