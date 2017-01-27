@@ -42,9 +42,9 @@ export default class Config {
             application: '',
             cookie: false,
             enabled: true,
-            errorURL: 'https://foozlejs.com/capture',
-            errorNoSSLURL: 'http://foozlejs.com/capture',
-            faultURL: 'http://foozlejs.com/fault.gif',
+            errorURL: 'https://foozlejs.herokuapp.com/capture',
+            errorNoSSLURL: 'http://foozlejs.herokuapp.com/capture',
+            faultURL: 'http://foozlejs.herokuapp.com/project/internal/error/',
             onError() {
                 return true;
             },
@@ -104,7 +104,7 @@ export default class Config {
             visitor: {
                 enabled: true
             },
-            usageURL: 'http://foozlejs.com/usage.gif',
+            usageURL: 'https://foozlejs.herokuapp.com/capture',
             window: {
                 enabled: true,
                 promise: true

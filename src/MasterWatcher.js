@@ -18,10 +18,11 @@ export default class MasterWatcher {
         try {
             this.window = win;
             this.document = doc;
-            this.onError = util.bind(this.onError, this);
-            this.onFault = util.bind(this.onFault, this);
-            this.serialize = util.bind(this.serialize, this);
             this.config = new Config(token);
+            this.onFault = util.bind(this.onFault, this);
+            this.onError = util.bind(this.onError, this);
+
+            this.serialize = util.bind(this.serialize, this);
             this.transmitter = new Transmitter(this.config);
             this.log = new Log();
             this.api = new InitWatcher(this.config, util, this.onError, this.serialize);
@@ -155,9 +156,13 @@ export default class MasterWatcher {
 
     onFault(error) {
         const sysLogger = this.transmitter || new Transmitter();
+        const customer = this.customer || {};
+        const foozle = this.window ? this.window._foozlejs : {};
+
         error = error || {};
+
         error = {
-            token: this.customer.token,
+            token: customer.token || foozle.token,
             file: error.file || error.fileName,
             msg: error.message || 'unknown',
             stack: (error.stack || 'unknown').substr(0, 500),
