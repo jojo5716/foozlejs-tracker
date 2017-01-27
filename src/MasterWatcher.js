@@ -1,4 +1,6 @@
 /* eslint-disable max-len */
+/* eslint-disable no-underscore-dangle */
+
 import Listener from './listener';
 import Config from './Config';
 import ConsoleWatcher from './ConsoleWatcher';
