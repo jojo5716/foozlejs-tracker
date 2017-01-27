@@ -1,7 +1,7 @@
 {
   "name": "foozle-tracker",
   "version": "1.0.4",
-  "description": "Tracking errors",
+  "description": "FoozleJS it's a tiny library that allow you to register errors of your web applications, and fix it faster",
   "main": "./dist/index.js",
   "scripts": {
     "start": "webpack-dashboard -- webpack-dev-server --config webpack.dev.config.js --port 8888",
@@ -17,8 +17,8 @@
     "type": "git",
     "url": "git+https://github.com/jojo5716/foozlejs-tracker.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["foozlejs", "errors", "javascript", "tracking", "track", "monitoring error", "register error"],
+  "author": "Jonathan Rodríguez",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jojo5716/foozlejs-tracker/issues"
