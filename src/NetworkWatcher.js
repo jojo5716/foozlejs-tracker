@@ -34,7 +34,7 @@ export default class NetworkWatcher {
         XHR.prototype.open = function (method, url) {
             const uri = (url || '').toString();
 
-            if (!uri.includes('localhost:0')) {
+            if (!uri.indexOf('localhost:0') !== -1) {
                 this._foozlejs = {
                     method,
                     url: uri

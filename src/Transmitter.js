@@ -21,7 +21,7 @@ export default class Transmitter {
 
     errorEndpoint(className) {
         let cl = this.config.current.errorURL;
-        if (!util.testCrossdomainXhr() || window.location.protocol.includes('https')) {
+        if (!util.testCrossdomainXhr() || window.location.protocol.indexOf('https') !== -1) {
             cl = this.config.current.errorNoSSLURL;
         }
         return `${cl}?token=${className}`;

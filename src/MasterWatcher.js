@@ -93,15 +93,16 @@ export default class MasterWatcher {
                     const message = args.message || this.serialize(args, options.force);
 
                     if (message && message.indexOf) {
-                        if (message.includes('FoozleJS Caught')) {
+                        if (message.indexOf('FoozleJS Caught') !== -1) {
                             return;
                         }
 
-                        if (active && message.includes('Script error')) {
+                        if (active && message.indexOf('Script error') !== -1) {
                             active = false;
                             return;
                         }
                     }
+                    
                     const obj = util.extend({}, {
                         bindStack: options.bindStack,
                         bindTime: options.bindTime,
