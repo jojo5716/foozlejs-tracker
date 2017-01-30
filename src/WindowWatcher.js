@@ -21,24 +21,27 @@ export default class WindowWatcher {
         }
     }
 
-    watchWindowErrors(context) {
-        const contextHandler = context.onerror || (() => {});
 
-        context.onerror = (errorMessage, host, width, height, stack = {}) => {
+watchWindowErrors(context) {
+        const contextHandler = context.onerror || (() => {});
+        const self = this;
+
+        context.onerror = (errorMessage, host, width, height, stack) => {
             try {
-                stack.message = stack.message || '';
-                this.serialize(errorMessage);
+                stack = stack || {};
+                stack.message = stack.message || self.serialize(errorMessage);
+
                 stack.line = stack.line || parseInt(width, 10) || null;
                 stack.column = stack.column || parseInt(height, 10) || null;
 
                 if (Object.prototype.toString.call(errorMessage) !== '[object Event]' || host) {
-                    stack.file = stack.file || this.serialize(host);
+                    stack.file = stack.file || self.serialize(host);
                 } else {
                     stack.file = (errorMessage.target || {}).src;
                 }
-                this.onError('window', stack);
+                self.onError('window', stack);
             } catch (buffer) {
-                this.onFault(buffer);
+                self.onFault(buffer);
             }
             contextHandler.call(context, errorMessage, host, width, height, stack);
         };
