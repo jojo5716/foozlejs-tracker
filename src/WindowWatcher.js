@@ -22,7 +22,7 @@ export default class WindowWatcher {
     }
 
 
-watchWindowErrors(context) {
+    watchWindowErrors(context) {
         const contextHandler = context.onerror || (() => {});
         const self = this;
 

@@ -63,7 +63,7 @@ const InitWatcher = (request, util, error, callback) => ({
     },
 
     hash: '9b37e9ac0b951d1cc4f7724bcd102d9edbc4a5d2',
-    version: '1.0.3'
+    version: '1.0.4'
 });
 
 module.exports = {
