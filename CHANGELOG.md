@@ -1,3 +1,10 @@
+#### 1.0.6 (2017-1-30)
+
+##### Bug Fixes
+
+* **watcher:** Window watcher -> Attempted to assign to readonly property. ([ce35b466](https://github.com/jojo5716/foozlejs-tracker/commit/ce35b466484aeb04d3d64f713cfc487d58892656))
+* **includes attr:** Change includes attr by indexOf ([69727e5b](https://github.com/jojo5716/foozlejs-tracker/commit/69727e5bbf1ceb01549cc1a16a795f215eb5bfba))
+
 #### 1.0.5 (2017-1-27)
 
 #### 1.0.4 (2017-1-27)
