@@ -1,63 +1,65 @@
 <html>
-    <head>
-        <title>Foozle tracker</title>
-    </head>
+<head>
+    <title>Foozle tracker</title>
+</head>
 
-    <body>
-        <p> Hello world! </p>
-        <input type="text"/>
-        <input type="password" placeholder="Password"/>
-        <select>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-        </select>
-        <form>
-            <input type="radio" name="gender" value="male" checked> Male<br>
-            <input type="radio" name="gender" value="female"> Female<br>
-            <input type="radio" name="gender" value="other"> Other
-        </form>
-        <button onclick="prueba()"> Generar error </button>
-    </body>
+<body>
+<p> Hello world! </p>
+<input type="text"/>
+<input type="password" placeholder="Password"/>
+<select>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+</select>
+<form>
+    <input type="radio" name="gender" value="male" checked> Male<br>
+    <input type="radio" name="gender" value="female"> Female<br>
+    <input type="radio" name="gender" value="other"> Other
+</form>
+<button id="boton_prueba"> Generar error </button>
+</body>
 
-    <script type="text/javascript">
-        window._foozlejs = {
-            token: 'b912a2fc-bb1e-4f68-ae69-6ce3eda3f223',
-            console: {
-                warn: true
-            },
-            onError: function (payload, error) {
-                return true;
+<script type="text/javascript">
+    window._foozlejs = {
+        token: 'b912a2fc-bb1e-4f68-ae69-6ce3eda3f223',
+        console: {
+            warn: true
+        },
+        callback: {
+            enabled: false
+        },
+        onError: function (payload, error) {
+            return true;
 
-            }
-
-        };
-    </script>
-
-    <script src="__dist__/index.js" async="true"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-    <script type="text/javascript">
-        window.foozlejs.addMetadata("country", "Spain");
-        window.foozlejs.addMetadata("IP", "192.168.1.1");
-        window.foozlejs.addMetadata("IsLoggin", false);
-    </script>
-
-    <script type="text/javascript">
-         console.log("hola mundo");
-        // window.foozlejs.track('Capturing data...');
-        // $.ajax({
-        //   method: "GET",
-        //   url: "https://www.google.es",
-        //
-        // })
-        //   .done(function( msg ) {
-        //     alert( "Data Saved: " + msg );
-        //   });
-
-        function prueba() {
-            console.log(hola);
         }
 
-    </script>
+    };
+</script>
+
+<script src="__dist__/index.js" async="true"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+    window.foozlejs.addMetadata("country", "Spain");
+    window.foozlejs.addMetadata("IP", "192.168.1.1");
+    window.foozlejs.addMetadata("IsLoggin", false);
+</script>
+
+<script type="text/javascript">
+    var i = 0;
+    function printConsole() {
+        console.log("hello");
+        console.log(i);
+        i += 1;
+        if (i == 3) {
+            i.indexOf('hello')
+        }
+    }
+
+    var elem = document.getElementById('boton_prueba');
+    elem.addEventListener('click', printConsole, false)
+
+
+</script>
 </html>

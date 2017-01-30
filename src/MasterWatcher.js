@@ -1,7 +1,6 @@
 /* eslint-disable max-len */
 /* eslint-disable no-underscore-dangle */
 
-import Listener from './listener';
 import Config from './Config';
 import ConsoleWatcher from './ConsoleWatcher';
 import Customer from './Customer';
@@ -56,7 +55,6 @@ export default class MasterWatcher {
                     )
                 )
             ) {
-                this.callbackWatcher = new Listener(this.onError, this.onFault, this.window, this.config.current.callback);
                 this.visitorWatcher = new VisitorWatcher(this.log, this.onError, this.onFault, this.document, this.config.current.visitor);
                 this.networkWatcher = new NetworkWatcher(this.log, this.onError, this.onFault, this.window, this.config.current.network);
                 this.windowWatcher = new WindowWatcher(this.onError, this.onFault, this.serialize, this.window, this.config.current.window);

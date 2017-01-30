@@ -19,7 +19,7 @@ export default class Config {
             enabled: true,
             token: true,
             callback: {
-                enabled: true
+                enabled: false
             },
             console: {
                 enabled: true
