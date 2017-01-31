@@ -28,7 +28,8 @@ export default class Config {
                 enabled: true
             },
             visitor: {
-                enabled: true
+                enabled: true,
+                input: false
             },
             window: {
                 enabled: true,

@@ -91,7 +91,7 @@ export default class VisitorWatcher {
         this.log.add('v', {
             timestamp: util.isoNow(),
             action: elementType,
-            value: elementType !== 'password' ? value : null,
+            value: this.options.input ? elementType !== 'password' ? value : null : null,
             element: {
                 tag: element.tagName.toLowerCase(),
                 attributes: VisitorWatcher.getElementAttributes(element),
