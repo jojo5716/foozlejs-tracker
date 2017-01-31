@@ -43,8 +43,8 @@ export default class Config {
             application: '',
             cookie: false,
             enabled: true,
-            errorURL: 'https://foozlejs.herokuapp.com/capture',
-            errorNoSSLURL: 'http://foozlejs.herokuapp.com/capture',
+            errorURL: 'https://foozlejs.herokuapp.com/project/capture',
+            errorNoSSLURL: 'http://foozlejs.herokuapp.com/project/capture',
             faultURL: 'http://foozlejs.herokuapp.com/project/internal/error/',
             onError() {
                 return true;
