@@ -45,12 +45,15 @@ export default class Enviroment {
     }
 
     report() {
+        const window = this.window || {};
+        const document = window.document || null;
+
         return {
             age: new Date().getTime() - this.loadedOn,
             dependencies: this.discoverDependencies(),
-            userAgent: this.window.navigator.userAgent,
-            viewportHeight: this.window.document.documentElement.clientHeight,
-            viewportWidth: this.window.document.documentElement.clientWidth
+            userAgent: window.navigator ? window.navigator.userAgent : null,
+            viewportHeight: document ? document.documentElement.clientHeight : null,
+            viewportWidth: document ? document.documentElement.clientWidth : null
         };
     }
 }
