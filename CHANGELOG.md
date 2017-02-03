@@ -1,3 +1,9 @@
+#### 1.0.11 (2017-2-3)
+
+##### Bug Fixes
+
+* **import:** Fix import foozleJS from npm ([08d0f500](https://github.com/jojo5716/foozlejs-tracker/commit/08d0f500e3ee1fc16b6f4c3b04f1418322c1fa1f))
+
 #### 1.0.10 (2017-1-31)
 
 #### 1.0.9 (2017-1-31)
