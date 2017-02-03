@@ -23,7 +23,8 @@ How to use
     </script>
 ```
 * 4.- If your application have any error, you will see it in the dashboard.
-# Or you can import foozleJS in your javascript and decide when you want to report an error
+
+## Or you can import foozleJS in your javascript and decide when you want to report an error
 ``` javascript
  npm install --save foozle-tracker 
  import FoozleJS from 'foozle-tracker';
