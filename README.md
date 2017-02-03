@@ -15,7 +15,7 @@ How to use
 * 2.- Create a project and get the token generated.
 * 3-. Call the https://cdn.jsdelivr.net/foozlejs/1.0.11/index.min.js file in your project and configure the token.
 ```javascript 
-   <script src="<PROJECT_PATH>/index.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/foozlejs/1.0.11/index.min.js"></script>
     <script type="text/javascript">
         window._foozlejs = {
             token: '<PROJECT_TOKEN>',
