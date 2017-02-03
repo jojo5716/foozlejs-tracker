@@ -28,8 +28,10 @@ How to use
 ``` javascript
  npm install --save foozle-tracker 
  import FoozleJS from 'foozle-tracker';
+ 
+ const foozle = new FoozleJS({ token: '<TOKEN_PROJECT>' }, window, document); // Window and Document are optionals
  foozle.initAPI(); // To init listeners
- foozle.api.track("gi") // Send an error (String, object, etc..)
+ foozle.api.track("Registering an error") // Send an error (String, object, etc..)
 ```
 ## Example:
 ``` javascript
