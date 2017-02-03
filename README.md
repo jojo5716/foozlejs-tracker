@@ -3,6 +3,10 @@
 
 FoozleJS it's a tiny library that allow you to register errors of your web applications, and fix it faster.
 
+[![npm version](https://badge.fury.io/js/foozle-tracker.svg)](https://badge.fury.io/js/foozle-tracker)
+[![Package Quality](http://npm.packagequality.com/shield/foozle-tracker.svg)](http://packagequality.com/#?package=foozle-tracker)
+[![Join the chat at https://gitter.im/techfort/LokiJS](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/foozle-tracker?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 
 Tracking javascript errors.
 ----------
