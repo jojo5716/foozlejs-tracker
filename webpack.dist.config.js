@@ -7,7 +7,9 @@ module.exports  = {
     // Relative to context path
     entry: {
         index: ['./src/index.js'],
-        'index.min': ['./src/index.js']
+        'index.min': ['./src/index.js'],
+        'indexWeb': ['./src/indexWeb.js'],
+        'indexWeb.min': ['./src/indexWeb.js']
     },
 
     // Webpack output config
