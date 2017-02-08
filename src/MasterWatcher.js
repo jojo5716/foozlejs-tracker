@@ -101,24 +101,31 @@ export default class MasterWatcher {
                         }
                     }
 
+                    const windowConsoleWatcher = this.windowConsoleWatcher || {};
+                    const customer = this.customer || {};
+                    const metadata = this.metadata || {};
+                    const environment = this.environment || {};
+                    const networkWatcher = this.networkWatcher || {};
+                    const visitorWatcher = this.visitorWatcher || {};
+
                     const obj = util.extend({}, {
                         bindStack: options.bindStack,
                         bindTime: options.bindTime,
                         column: args.column || args.columnNumber,
-                        console: this.windowConsoleWatcher.report(),
-                        customer: this.customer.report(),
+                        console: windowConsoleWatcher.report ? windowConsoleWatcher.report() : null,
+                        customer: customer.report ? customer.report() : null,
                         entry: NodeGenerator,
-                        environment: this.environment.report(),
+                        environment: environment.report ? environment.report() : null,
                         file: args.file || args.fileName,
                         line: args.line || args.lineNumber,
                         message,
-                        metadata: this.metadata.report(),
-                        network: this.networkWatcher ? this.networkWatcher.report() : null,
+                        metadata: metadata.report ? metadata.report() : null,
+                        network: networkWatcher.report ? networkWatcher.report() : null,
                         url: (this.window.location || '').toString(),
                         stack: args.stack,
                         timestamp: util.isoNow(),
-                        visitor: this.visitorWatcher ? this.visitorWatcher.report() : null,
-                        version: '1.0.12'
+                        visitor: visitorWatcher.report ? visitorWatcher.report() : null,
+                        version: '1.0.13'
                     });
 
                     if (!options.force) {
@@ -168,7 +175,7 @@ export default class MasterWatcher {
             msg: error.message || 'unknown',
             stack: (error.stack || 'unknown').substr(0, 500),
             url: this.window.location,
-            v: '1.0.12',
+            v: '1.0.13',
             h: '9b37e9ac0b951d1cc4f7724bcd102d9edbc4a5d2',
             x: util.uuid()
         };
