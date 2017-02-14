@@ -1,7 +1,6 @@
 /* eslint-disable max-len */
 /* eslint-disable no-underscore-dangle */
-require('es6-object-assign').polyfill();
-
+/* eslint-disable complexity */
 import Config from './Config';
 import ConsoleWatcher from './ConsoleWatcher';
 import Customer from './Customer';
@@ -11,8 +10,10 @@ import Log from './Log';
 import NetworkWatcher from './NetworkWatcher';
 import VisitorWatcher from './VisitorWatcher';
 import WindowWatcher from './WindowWatcher';
-
 import { util, MetadataReport, InitWatcher } from './helpers/utils';
+
+require('es6-object-assign').polyfill();
+
 
 export default class MasterWatcher {
     constructor(token, win = {}, doc = {}) {
@@ -82,14 +83,15 @@ export default class MasterWatcher {
 
         return (() => {
             if (util.isBrowserSupported() && this.config.current.enabled) {
+                const argsClone = Object.assign({}, args || {});
+
                 try {
-                    args = args || {};
                     options = options || {
                         bindStack: null,
                         bindTime: null,
                         force: false
                     };
-                    const message = args.message || this.serialize(args, options.force);
+                    const message = argsClone.message || this.serialize(argsClone, options.force);
 
                     if (message && message.indexOf) {
                         if (message.indexOf('FoozleJS Caught') !== -1) {
@@ -112,18 +114,18 @@ export default class MasterWatcher {
                     const obj = util.extend({}, {
                         bindStack: options.bindStack,
                         bindTime: options.bindTime,
-                        column: args.column || args.columnNumber,
+                        column: argsClone.column || argsClone.columnNumber,
                         console: windowConsoleWatcher.report ? windowConsoleWatcher.report() : null,
                         customer: customer.report ? customer.report() : null,
                         entry: NodeGenerator,
                         environment: environment.report ? environment.report() : null,
-                        file: args.file || args.fileName,
-                        line: args.line || args.lineNumber,
+                        file: argsClone.file || argsClone.fileName,
+                        line: argsClone.line || argsClone.lineNumber,
                         message,
                         metadata: metadata.report ? metadata.report() : null,
                         network: networkWatcher.report ? networkWatcher.report() : null,
                         url: (this.window.location || '').toString(),
-                        stack: args.stack,
+                        stack: argsClone.stack,
                         timestamp: util.isoNow(),
                         visitor: visitorWatcher.report ? visitorWatcher.report() : null,
                         version: '1.0.14'
@@ -131,7 +133,7 @@ export default class MasterWatcher {
 
                     if (!options.force) {
                         try {
-                            if (!this.config.current.onError(obj, args)) {
+                            if (!this.config.current.onError(obj, argsClone)) {
                                 return;
                             }
                         } catch (e) {
