@@ -1,3 +1,9 @@
+#### 1.0.18 (2017-2-14)
+
+##### Bug Fixes
+
+* **internal error:** Attempted to assign to readonly property ([59ca210f](https://github.com/jojo5716/foozlejs-tracker/commit/59ca210ff1150030414449002a53da3cf8e31aea))
+
 #### 1.0.17 (2017-2-6)
 
 #### 1.0.16 (2017-2-3)
