@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 /* eslint-disable no-underscore-dangle */
+require('es6-object-assign').polyfill();
 
 import Config from './Config';
 import ConsoleWatcher from './ConsoleWatcher';
@@ -125,7 +126,7 @@ export default class MasterWatcher {
                         stack: args.stack,
                         timestamp: util.isoNow(),
                         visitor: visitorWatcher.report ? visitorWatcher.report() : null,
-                        version: '1.0.13'
+                        version: '1.0.14'
                     });
 
                     if (!options.force) {
@@ -166,20 +167,31 @@ export default class MasterWatcher {
         const sysLogger = this.transmitter || new Transmitter();
         const customer = this.customer || {};
         const foozle = this.window ? this.window._foozlejs : {};
+        const environment = this.environment || {};
+        let visitorEnvironment;
+        let errorClone = Object.assign({}, error);
 
-        error = error || {};
+        try {
+            visitorEnvironment = environment.report ? environment.report() : null;
+        } catch (visitorError) {
+            visitorEnvironment = visitorError;
+        }
 
-        error = {
+        errorClone = {
             token: customer.token || foozle.token,
-            file: error.file || error.fileName,
-            msg: error.message || 'unknown',
-            stack: (error.stack || 'unknown').substr(0, 500),
+            file: errorClone.file || errorClone.fileName,
+            msg: errorClone.message || 'unknown',
+            stack: (errorClone.stack || 'unknown').substr(0, 500),
             url: this.window.location,
-            v: '1.0.13',
+            v: '1.0.14',
             h: '9b37e9ac0b951d1cc4f7724bcd102d9edbc4a5d2',
-            x: util.uuid()
+            x: util.uuid(),
+            userAgent: visitorEnvironment.userAgent,
+            viewportHeight: visitorEnvironment.viewportHeight,
+            viewportWidth: visitorEnvironment.viewportWidth
+
         };
-        sysLogger.sendTrackerFault(error);
+        sysLogger.sendTrackerFault(errorClone);
     }
 
     serialize(obj, method) {

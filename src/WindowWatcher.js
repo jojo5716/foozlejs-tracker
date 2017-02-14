@@ -2,6 +2,7 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable complexity */
 /* eslint-disable max-statements */
+require('es6-object-assign').polyfill();
 
 export default class WindowWatcher {
     constructor(onError, onFault, serialize, win, result) {
@@ -27,23 +28,25 @@ export default class WindowWatcher {
         const self = this;
 
         context.onerror = (errorMessage, host, width, height, stack) => {
-            try {
-                stack = stack || {};
-                stack.message = stack.message || self.serialize(errorMessage);
+            const stackClone = Object.assign({}, stack);
 
-                stack.line = stack.line || parseInt(width, 10) || null;
-                stack.column = stack.column || parseInt(height, 10) || null;
+            try {
+                stackClone.message = stackClone.message || self.serialize(errorMessage);
+
+                stackClone.line = stackClone.line || parseInt(width, 10) || null;
+                stackClone.column = stackClone.column || parseInt(height, 10) || null;
 
                 if (Object.prototype.toString.call(errorMessage) !== '[object Event]' || host) {
-                    stack.file = stack.file || self.serialize(host);
+                    stackClone.file = stackClone.file || self.serialize(host);
                 } else {
-                    stack.file = (errorMessage.target || {}).src;
+                    stackClone.file = (errorMessage.target || {}).src;
                 }
-                self.onError('window', stack);
+                self.onError('window', stackClone);
             } catch (buffer) {
                 self.onFault(buffer);
             }
-            contextHandler.call(context, errorMessage, host, width, height, stack);
+
+            contextHandler.call(context, errorMessage, host, width, height, stackClone);
         };
     }
 }

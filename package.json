@@ -51,5 +51,7 @@
     "webpack-dashboard": "^0.2.0",
     "webpack-dev-server": "^1.16.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "es6-object-assign": "^1.0.3"
+  }
 }
