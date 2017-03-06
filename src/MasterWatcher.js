@@ -83,15 +83,13 @@ export default class MasterWatcher {
 
         return (() => {
             if (util.isBrowserSupported() && this.config.current.enabled) {
-                const argsClone = Object.assign({}, args || {});
-
                 try {
                     options = options || {
                         bindStack: null,
                         bindTime: null,
                         force: false
                     };
-                    const message = argsClone.message || this.serialize(argsClone, options.force);
+                    const message = args.message || this.serialize(args, options.force);
 
                     if (message && message.indexOf) {
                         if (message.indexOf('FoozleJS Caught') !== -1) {
@@ -114,18 +112,18 @@ export default class MasterWatcher {
                     const obj = util.extend({}, {
                         bindStack: options.bindStack,
                         bindTime: options.bindTime,
-                        column: argsClone.column || argsClone.columnNumber,
+                        column: args.column || args.columnNumber,
                         console: windowConsoleWatcher.report ? windowConsoleWatcher.report() : null,
                         customer: customer.report ? customer.report() : null,
                         entry: NodeGenerator,
                         environment: environment.report ? environment.report() : null,
-                        file: argsClone.file || argsClone.fileName,
-                        line: argsClone.line || argsClone.lineNumber,
+                        file: args.file || args.fileName,
+                        line: args.line || args.lineNumber,
                         message,
                         metadata: metadata.report ? metadata.report() : null,
                         network: networkWatcher.report ? networkWatcher.report() : null,
                         url: (this.window.location || '').toString(),
-                        stack: argsClone.stack,
+                        stack: args.stack,
                         timestamp: util.isoNow(),
                         visitor: visitorWatcher.report ? visitorWatcher.report() : null,
                         version: '1.0.14'
@@ -133,7 +131,7 @@ export default class MasterWatcher {
 
                     if (!options.force) {
                         try {
-                            if (!this.config.current.onError(obj, argsClone)) {
+                            if (!this.config.current.onError(obj, args)) {
                                 return;
                             }
                         } catch (e) {
