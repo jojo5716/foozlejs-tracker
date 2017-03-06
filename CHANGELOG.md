@@ -1,3 +1,9 @@
+#### 1.0.19 (2017-3-6)
+
+##### Bug Fixes
+
+* **direct:** Direct message ([f92309b9](https://github.com/jojo5716/foozlejs-tracker/commit/f92309b9966bc8d68efdd94c2ba46f08a5174671))
+
 #### 1.0.18 (2017-2-14)
 
 ##### Bug Fixes
