@@ -23,7 +23,7 @@
 <script type="text/javascript">
     window._foozlejs = {
         token: '095b0a09-fa45-42eb-92fa-113d503fc658',
-        errorURL: 'http://127.0.0.1:8000/project/capture',
+        errorURL: 'http://127.0.0.1:8000/api/v1/errors/capture',
         console: {
             warn: true
         },
@@ -35,7 +35,6 @@
         },
         onError: function (payload, error) {
             return true;
-
         }
 
     };
@@ -43,12 +42,6 @@
 
 <script src="__dist__/index.js" ></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-<script type="text/javascript">
-    window.foozlejs.addMetadata("country", "Spain");
-    window.foozlejs.addMetadata("IP", "192.168.1.1");
-    window.foozlejs.addMetadata("IsLoggin", false);
-</script>
 
 <script type="text/javascript">
     var i = 0;
