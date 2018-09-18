@@ -11,17 +11,7 @@ const MetadataReport = (filter) => {
             delete obj[name];
         },
         report() {
-            const index = [];
-            let i;
-            for (i in obj) {
-                if (obj.hasOwnProperty(i)) {
-                    index.push({
-                        key: i,
-                        value: filter(obj[i])
-                    });
-                }
-            }
-            return index;
+            return obj;
         },
         store: obj
     };

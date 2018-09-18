@@ -69,8 +69,6 @@ export default class MasterWatcher {
 
     initAPI() {
         if (this.customer.token) {
-            this.api.addMetadata = this.metadata.addMetadata;
-            this.api.removeMetadata = this.metadata.removeMetadata;
             return this.api;
         }
 

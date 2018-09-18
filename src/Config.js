@@ -43,9 +43,9 @@ export default class Config {
             application: '',
             cookie: false,
             enabled: true,
-            errorURL: 'https://foozlejs.herokuapp.com/project/capture',
-            errorNoSSLURL: 'http://foozlejs.herokuapp.com/project/capture',
-            faultURL: 'http://foozlejs.herokuapp.com/project/internal/error/',
+            errorURL: 'https://foozle.services.prod.roiback.net/foozle/error/capture',
+            errorNoSSLURL: 'https://foozle.services.prod.roiback.net/foozle/error/capture',
+            faultURL: 'https://foozle.services.prod.roiback.net/foozle/error/internal/',
             onError() {
                 return true;
             },
@@ -105,7 +105,7 @@ export default class Config {
             visitor: {
                 enabled: true
             },
-            usageURL: 'https://foozlejs.herokuapp.com/capture',
+            usageURL: 'https://foozle.services.prod.roiback.net/foozle/error/capture',
             window: {
                 enabled: true,
                 promise: true

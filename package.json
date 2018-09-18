@@ -1,5 +1,5 @@
 {
-  "name": "foozle-tracker",
+  "name": "foozlejs-tracker",
   "version": "1.0.19",
   "description": "FoozleJS it's a tiny library that allow you to register errors of your web applications, and fix it faster",
   "main": "./dist/index.js",
