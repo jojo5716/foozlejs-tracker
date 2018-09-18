@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-syntax */
 
-const MetadataReport = (filter) => {
+const MetadataReport = () => {
     const obj = {};
 
     return {
