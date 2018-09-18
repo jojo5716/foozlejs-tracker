@@ -1,3 +1,9 @@
+#### 1.0.20 (2018-09-18)
+
+##### Other Changes
+
+*  Config urls, metadata ([a6b3c976](https://github.com/jojo5716/foozlejs-tracker/commit/a6b3c9761985b7fd4a5e1776202fcb39c13eb9b7))
+
 #### 1.0.19 (2017-3-6)
 
 ##### Bug Fixes
