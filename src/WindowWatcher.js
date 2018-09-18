@@ -2,7 +2,6 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable complexity */
 /* eslint-disable max-statements */
-require('es6-object-assign').polyfill();
 
 export default class WindowWatcher {
     constructor(onError, onFault, serialize, win, result) {
@@ -28,7 +27,7 @@ export default class WindowWatcher {
         const self = this;
 
         context.onerror = (errorMessage, host, width, height, stack) => {
-            const stackClone = Object.assign({}, stack);
+            const stackClone = { ...stack };
 
             try {
                 stackClone.message = stackClone.message || self.serialize(errorMessage);

@@ -12,8 +12,6 @@ import VisitorWatcher from './VisitorWatcher';
 import WindowWatcher from './WindowWatcher';
 import { util, MetadataReport, InitWatcher } from './helpers/utils';
 
-require('es6-object-assign').polyfill();
-
 
 export default class MasterWatcher {
     constructor(token, win = {}, doc = {}) {
@@ -167,7 +165,7 @@ export default class MasterWatcher {
         const foozle = this.window ? this.window._foozlejs : {};
         const environment = this.environment || {};
         let visitorEnvironment;
-        let errorClone = Object.assign({}, error);
+        let errorClone = { ...error };
 
         try {
             visitorEnvironment = environment.report ? environment.report() : null;
